@@ -13,6 +13,8 @@ MAX_CHARS = 140
 def render():
     if not 1 <= len(LINE) <= MAX_CHARS:
         raise ValueError("fortune line outside the 1-140 character gate")
+    if LINE.strip() != LINE or "\n" in LINE:
+        raise ValueError("fortune line must be a single line with no padding")
     return LINE
 
 
